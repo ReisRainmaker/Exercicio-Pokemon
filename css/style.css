@@ -1,0 +1,24 @@
+.caixa1{
+    background-color: rgba(209, 209, 209, 0.781);
+    padding: 10px;
+    width: auto;
+    margin: 10px;
+    height: auto;
+    border-radius: 25px;
+    justify-items:  center;
+
+    
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grande{
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.imagem{
+    width: 150px;
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+<div class="caixa1">
+<div class="grande" id="nome"></div>
+<br>
+<img class="imagem" id="imagem" src="" alt="">
+<br>
+<input id="numero" type="text">
+<button id="enviar">Enviar</button>
+</div>
+
+<script>
+document.getElementById('enviar').addEventListener('click',pesquisar)
+function pesquisar() {
+    console.log("a")
+    let numero = document.getElementById('numero').value;
+    fetch('https://pokeapi.co/api/v2/pokemon/'+ numero)
+    .then(response => response.json())
+    .then(data => {
+    console.table(data);
+    preencherTela(data);
+})
+}
+function preencherTela(data){
+    let numero = document.getElementById('numero').value;
+    document.getElementById('nome').innerText = data.name;
+    document.getElementById('imagem').src = data.sprites.front_default;
+}
+</script>
+</body>
+</html>
